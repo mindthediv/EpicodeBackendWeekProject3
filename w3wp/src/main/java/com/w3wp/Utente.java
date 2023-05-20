@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "utenti")
@@ -29,6 +28,7 @@ public class Utente {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tessere_seq")
     public int id_tessera;
     
+    public Utente(){}
     public Utente(String nome, String cognome, Date data_nascita) {
         this.nome = nome;
         this.cognome = cognome;

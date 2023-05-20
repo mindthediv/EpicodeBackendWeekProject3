@@ -12,6 +12,8 @@ public class Libro extends Scritto {
     @Column
     public String genere;
 
+    public Libro(){}    
+
     public Libro(String titolo, int annoUscita, int numeroPagine, String autore, String genere) {
         super(titolo, annoUscita, numeroPagine);
         this.autore = autore;
@@ -34,9 +36,7 @@ public class Libro extends Scritto {
 
     @Override
     public String toString() {
-        
-        return super.toString() + "@" +this.autore+"#"+this.genere;
+        return "Libro [autore=" + autore + ", genere=" + genere + "]";
     }
 
-    
 }

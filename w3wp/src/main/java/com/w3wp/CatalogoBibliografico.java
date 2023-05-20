@@ -1,7 +1,7 @@
 package com.w3wp;
 
 import java.io.*;
-import java.sql.Date;
+
 import java.util.Scanner;
 
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ public final class CatalogoBibliografico extends Archivi {
         // scanInit();
         // salvaArchivio();  
          Utente mario = new Utente("Mario", "Rossi", dateUtil.parseDate("2000-05-28"));
-         Libro libro = new Libro("La Bibbia", 33, 1235, "jimmy", "sacro");
+         Libro libro = new Libro("wowow", 2012, 235, "jimmy", "avventura");
          Rivista rivista = new Rivista("La settimana enigmistica", 2023, 47, period.SETTIMANALE);
          Prestito prestito = new Prestito(mario, rivista, dateUtil.parseDate("2023-01-01"));
        
@@ -30,7 +30,10 @@ public final class CatalogoBibliografico extends Archivi {
 
         cercaIsbn(2);
         cercaAnno(2023);
-        //cercaAutore("jimmy");
+        cercaAutore("jimmy");
+        cercaTitolo("wow");
+        cercaPrestato(0);
+        cercaScaduti();
 
     }
     static public void scanInit() throws IOException{
@@ -63,7 +66,7 @@ public final class CatalogoBibliografico extends Archivi {
                 break;
             case "salva archivio":
                 System.out.println("");
-                salvaArchivio();
+               
                 scanInit();
                 break;
             case "esci":

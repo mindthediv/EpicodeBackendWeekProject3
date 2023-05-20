@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "scritti")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Scritto {
+public class Scritto {
     @Id
     @SequenceGenerator(name = "scritti_seq", sequenceName = "scritti_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "scritti_seq")

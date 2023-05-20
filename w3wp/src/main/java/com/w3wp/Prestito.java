@@ -10,10 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import net.bytebuddy.asm.Advice.This;
 
 @Entity
 @Table(name = "prestiti")
@@ -33,11 +29,13 @@ public class Prestito {
     @Column(nullable = true)
     Date data_rest_effettiva;
 
-    
+    public Prestito(){}
     public Prestito(Utente utente, Scritto scritto_prestato, Date data_inizio) {
         this.utente = utente;
         this.scritto_prestato = scritto_prestato;
         this.data_inizio = data_inizio;
+    }
+    public Prestito(Object object, Object object2, Date parseDate) {
     }
     public long getId() {
         return id_prestito;

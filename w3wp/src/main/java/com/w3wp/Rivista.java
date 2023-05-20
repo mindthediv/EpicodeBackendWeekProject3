@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -14,9 +13,6 @@ public class Rivista extends Scritto {
     @Enumerated(EnumType.STRING)
     @Column(name = "cadenza")
     public period period;
-    
-    
-    
 
     public Rivista(String titolo,int annoUscita, int numeroPagine,  period period){
         super(titolo, annoUscita, numeroPagine);
